@@ -1,0 +1,704 @@
+alp@alp-laptop ~/programming $ ./aes 
+input 16 character key
+16 characters is this many:
+________________
+Thats my Kung Fu
+input 16 character message
+16 characters is this many:
+________________
+Two One Nine Two
+
+input key
+54 68 61 74 73 20 6d 79 20 4b 75 6e 67 20 46 75 
+output keys
+54 68 61 74 73 20 6d 79 20 4b 75 6e 67 20 46 75 
+e2 32 fc f1 91 12 91 88 b1 59 e4 e6 d6 79 a2 93 
+56 8 20 7 c7 1a b1 8f 76 43 55 69 a0 3a f7 fa 
+d2 60 d e7 15 7a bc 68 63 39 e9 1 c3 3 1e fb 
+a1 12 2 c9 b4 68 be a1 d7 51 57 a0 14 52 49 5b 
+b1 29 3b 33 5 41 85 92 d2 10 d2 32 c6 42 9b 69 
+bd 3d c2 87 b8 7c 47 15 6a 6c 95 27 ac 2e e 4e 
+cc 96 ed 16 74 ea aa 3 1e 86 3f 24 b2 a8 31 6a 
+8e 51 ef 21 fa bb 45 22 e4 3d 7a 6 56 95 4b 6c 
+bf e2 bf 90 45 59 fa b2 a1 64 80 b4 f7 f1 cb d8 
+28 fd de f8 6d a4 24 4a cc c0 a4 fe 3b 31 6f 26 
+
+original message:
+54 77 6f 20 4f 6e 65 20 4e 69 6e 65 20 54 77 6f 
+
+add round 0 key
+0 3c 6e 47 
+1f 4e 22 74 
+e 8 1b 31 
+54 59 b 1a 
+
+
+byte substitution
+new state matrix
+63 eb 9f a0 
+c0 2f 93 92 
+ab 30 af c7 
+20 cb 2b a2 
+
+
+shift rows
+new state matrix
+63 eb 9f a0 
+2f 93 92 c0 
+af c7 ab 30 
+a2 20 cb 2b 
+
+
+mix columns
+new state matrix
+ba 84 e8 1b 
+75 a4 8d 40 
+f4 8d 6 7d 
+7a 32 e 5d 
+
+
+xor with roundKey 1
+new state matrix
+58 15 59 cd 
+47 b6 d4 39 
+8 1c e2 df 
+8b ba e8 ce 
+
+
+output from round 1
+58 15 59 cd 
+47 b6 d4 39 
+8 1c e2 df 
+8b ba e8 ce 
+
+
+byte substitution
+new state matrix
+6a 59 cb bd 
+a0 4e 48 12 
+30 9c 98 9e 
+3d f4 9b 8b 
+
+
+shift rows
+new state matrix
+6a 59 cb bd 
+4e 48 12 a0 
+98 9e 30 9c 
+8b 3d f4 9b 
+
+
+mix columns
+new state matrix
+15 c9 7f 9d 
+ce 4d 4b c2 
+89 71 be 88 
+65 47 97 cd 
+
+
+xor with roundKey 2
+new state matrix
+43 e 9 3d 
+c6 57 8 f8 
+a9 c0 eb 7f 
+62 c8 fe 37 
+
+
+output from round 2
+43 e 9 3d 
+c6 57 8 f8 
+a9 c0 eb 7f 
+62 c8 fe 37 
+
+
+byte substitution
+new state matrix
+1a ab 1 27 
+b4 5b 30 41 
+d3 ba e9 d2 
+aa e8 bb 9a 
+
+
+shift rows
+new state matrix
+1a ab 1 27 
+5b 30 41 b4 
+e9 d2 d3 ba 
+9a aa e8 bb 
+
+
+mix columns
+new state matrix
+aa 65 fa 88 
+16 c 5 3a 
+3d c1 de 2a 
+b3 4b 5a a 
+
+
+xor with roundKey 3
+new state matrix
+78 70 99 4b 
+76 76 3c 39 
+30 7d 37 34 
+54 23 5b f1 
+
+
+output from round 3
+78 70 99 4b 
+76 76 3c 39 
+30 7d 37 34 
+54 23 5b f1 
+
+
+byte substitution
+new state matrix
+bc 51 ee b3 
+38 38 eb 12 
+4 ff 9a 18 
+20 26 39 a1 
+
+
+shift rows
+new state matrix
+bc 51 ee b3 
+38 eb 12 38 
+9a 18 4 ff 
+a1 20 26 39 
+
+
+mix columns
+new state matrix
+10 bc d3 f3 
+d8 94 e0 e0 
+53 ea 9e 25 
+24 40 73 7b 
+
+
+xor with roundKey 4
+new state matrix
+b1 8 4 e7 
+ca fc b1 b2 
+51 54 c9 6c 
+ed e1 d3 20 
+
+
+output from round 4
+b1 8 4 e7 
+ca fc b1 b2 
+51 54 c9 6c 
+ed e1 d3 20 
+
+
+byte substitution
+new state matrix
+c8 30 f2 94 
+74 b0 c8 37 
+d1 20 dd 50 
+55 f8 66 b7 
+
+
+shift rows
+new state matrix
+c8 30 f2 94 
+b0 c8 37 74 
+dd 50 d1 20 
+b7 55 f8 66 
+
+
+mix columns
+new state matrix
+2a 26 8f e9 
+78 1e c 7a 
+1b a7 6f a 
+5b 62 0 3f 
+
+
+xor with roundKey 5
+new state matrix
+9b 23 5d 2f 
+51 5f 1c 38 
+20 22 bd 91 
+68 f0 32 56 
+
+
+output from round 5
+9b 23 5d 2f 
+51 5f 1c 38 
+20 22 bd 91 
+68 f0 32 56 
+
+
+byte substitution
+new state matrix
+14 26 4c 15 
+d1 cf 9c 7 
+b7 93 7a 81 
+45 8c 23 b1 
+
+
+shift rows
+new state matrix
+14 26 4c 15 
+cf 9c 7 d1 
+7a 81 b7 93 
+b1 45 8c 23 
+
+
+mix columns
+new state matrix
+a9 37 aa f2 
+ae d8 c 21 
+e7 6c b1 9c 
+f0 fd 67 3b 
+
+
+xor with roundKey 6
+new state matrix
+14 8f c0 5e 
+93 a4 60 f 
+25 2b 24 92 
+77 e8 40 75 
+
+
+output from round 6
+14 8f c0 5e 
+93 a4 60 f 
+25 2b 24 92 
+77 e8 40 75 
+
+
+byte substitution
+new state matrix
+fa 73 ba 58 
+dc 49 d0 76 
+3f f1 36 4f 
+f5 9b 9 9d 
+
+
+shift rows
+new state matrix
+fa 73 ba 58 
+49 d0 76 dc 
+36 4f 3f f1 
+9d f5 9b 9 
+
+
+mix columns
+new state matrix
+9f 37 51 37 
+af ec 8c fa 
+63 39 4 66 
+4b fb b1 d7 
+
+
+xor with roundKey 7
+new state matrix
+53 43 4f 85 
+39 6 a 52 
+8e 93 3b 57 
+5d f8 95 bd 
+
+
+output from round 7
+53 43 4f 85 
+39 6 a 52 
+8e 93 3b 57 
+5d f8 95 bd 
+
+
+byte substitution
+new state matrix
+ed 1a 84 97 
+12 6f 67 0 
+19 dc e2 5b 
+4c 41 2a 7a 
+
+
+shift rows
+new state matrix
+ed 1a 84 97 
+6f 67 0 12 
+e2 5b 19 dc 
+7a 4c 41 2a 
+
+
+mix columns
+new state matrix
+e8 8a 4b f5 
+74 75 ee e6 
+d3 1f 75 58 
+55 8a c 38 
+
+
+xor with roundKey 8
+new state matrix
+66 70 af a3 
+25 ce d3 73 
+3c 5a f 13 
+74 a8 a 54 
+
+
+output from round 8
+66 70 af a3 
+25 ce d3 73 
+3c 5a f 13 
+74 a8 a 54 
+
+
+byte substitution
+new state matrix
+33 51 79 a 
+3f 8b 66 8f 
+eb be 76 7d 
+92 c2 67 20 
+
+
+shift rows
+new state matrix
+33 51 79 a 
+8b 66 8f 3f 
+76 7d eb be 
+20 92 c2 67 
+
+
+mix columns
+new state matrix
+b6 e7 51 8c 
+84 88 98 ca 
+34 60 66 fb 
+e8 d7 70 51 
+
+
+xor with roundKey 9
+new state matrix
+9 a2 f0 7b 
+66 d1 fc 3b 
+8b 9a e6 30 
+78 65 c4 89 
+
+
+output from round 9
+9 a2 f0 7b 
+66 d1 fc 3b 
+8b 9a e6 30 
+78 65 c4 89 
+
+
+byte substitution
+new state matrix
+1 3a 8c 21 
+33 3e b0 e2 
+3d b8 8e 4 
+bc 4d 1c a7 
+
+
+shift rows
+new state matrix
+1 3a 8c 21 
+3e b0 e2 33 
+8e 4 3d b8 
+a7 bc 4d 1c 
+
+
+xor with roundKey a
+new state matrix
+29 57 40 1a 
+c3 14 22 2 
+50 20 99 d7 
+5f f6 b3 3a 
+
+
+final state matrix:
+29 57 40 1a 
+c3 14 22 2 
+50 20 99 d7 
+5f f6 b3 3a 
+
+final ciphertext:
+29 c3 50 5f 57 14 20 f6 40 22 99 b3 1a 2 d7 3a 
+
+Do you want to decrypt the ciphertext? (y/n)
+
+y
+add roundkey a
+new state matrix
+1 3a 8c 21 
+3e b0 e2 33 
+8e 4 3d b8 
+a7 bc 4d 1c 
+
+inverse shift rows
+new state matrix
+1 3a 8c 21 
+33 3e b0 e2 
+3d b8 8e 4 
+bc 4d 1c a7 
+
+inverse sub bytes
+new state matrix
+9 a2 f0 7b 
+66 d1 fc 3b 
+8b 9a e6 30 
+78 65 c4 89 
+
+add roundkey 9
+new state matrix
+b6 e7 51 8c 
+84 88 98 ca 
+34 60 66 fb 
+e8 d7 70 51 
+
+inverse mix columns
+new state matrix
+33 51 79 a 
+8b 66 8f 3f 
+76 7d eb be 
+20 92 c2 67 
+
+inverse shift rows
+new state matrix
+33 51 79 a 
+3f 8b 66 8f 
+eb be 76 7d 
+92 c2 67 20 
+
+inverse sub bytes
+new state matrix
+66 70 af a3 
+25 ce d3 73 
+3c 5a f 13 
+74 a8 a 54 
+
+add roundkey 8
+new state matrix
+e8 8a 4b f5 
+74 75 ee e6 
+d3 1f 75 58 
+55 8a c 38 
+
+inverse mix columns
+new state matrix
+ed 1a 84 97 
+6f 67 0 12 
+e2 5b 19 dc 
+7a 4c 41 2a 
+
+inverse shift rows
+new state matrix
+ed 1a 84 97 
+12 6f 67 0 
+19 dc e2 5b 
+4c 41 2a 7a 
+
+inverse sub bytes
+new state matrix
+53 43 4f 85 
+39 6 a 52 
+8e 93 3b 57 
+5d f8 95 bd 
+
+add roundkey 7
+new state matrix
+9f 37 51 37 
+af ec 8c fa 
+63 39 4 66 
+4b fb b1 d7 
+
+inverse mix columns
+new state matrix
+fa 73 ba 58 
+49 d0 76 dc 
+36 4f 3f f1 
+9d f5 9b 9 
+
+inverse shift rows
+new state matrix
+fa 73 ba 58 
+dc 49 d0 76 
+3f f1 36 4f 
+f5 9b 9 9d 
+
+inverse sub bytes
+new state matrix
+14 8f c0 5e 
+93 a4 60 f 
+25 2b 24 92 
+77 e8 40 75 
+
+add roundkey 6
+new state matrix
+a9 37 aa f2 
+ae d8 c 21 
+e7 6c b1 9c 
+f0 fd 67 3b 
+
+inverse mix columns
+new state matrix
+14 26 4c 15 
+cf 9c 7 d1 
+7a 81 b7 93 
+b1 45 8c 23 
+
+inverse shift rows
+new state matrix
+14 26 4c 15 
+d1 cf 9c 7 
+b7 93 7a 81 
+45 8c 23 b1 
+
+inverse sub bytes
+new state matrix
+9b 23 5d 2f 
+51 5f 1c 38 
+20 22 bd 91 
+68 f0 32 56 
+
+add roundkey 5
+new state matrix
+2a 26 8f e9 
+78 1e c 7a 
+1b a7 6f a 
+5b 62 0 3f 
+
+inverse mix columns
+new state matrix
+c8 30 f2 94 
+b0 c8 37 74 
+dd 50 d1 20 
+b7 55 f8 66 
+
+inverse shift rows
+new state matrix
+c8 30 f2 94 
+74 b0 c8 37 
+d1 20 dd 50 
+55 f8 66 b7 
+
+inverse sub bytes
+new state matrix
+b1 8 4 e7 
+ca fc b1 b2 
+51 54 c9 6c 
+ed e1 d3 20 
+
+add roundkey 4
+new state matrix
+10 bc d3 f3 
+d8 94 e0 e0 
+53 ea 9e 25 
+24 40 73 7b 
+
+inverse mix columns
+new state matrix
+bc 51 ee b3 
+38 eb 12 38 
+9a 18 4 ff 
+a1 20 26 39 
+
+inverse shift rows
+new state matrix
+bc 51 ee b3 
+38 38 eb 12 
+4 ff 9a 18 
+20 26 39 a1 
+
+inverse sub bytes
+new state matrix
+78 70 99 4b 
+76 76 3c 39 
+30 7d 37 34 
+54 23 5b f1 
+
+add roundkey 3
+new state matrix
+aa 65 fa 88 
+16 c 5 3a 
+3d c1 de 2a 
+b3 4b 5a a 
+
+inverse mix columns
+new state matrix
+1a ab 1 27 
+5b 30 41 b4 
+e9 d2 d3 ba 
+9a aa e8 bb 
+
+inverse shift rows
+new state matrix
+1a ab 1 27 
+b4 5b 30 41 
+d3 ba e9 d2 
+aa e8 bb 9a 
+
+inverse sub bytes
+new state matrix
+43 e 9 3d 
+c6 57 8 f8 
+a9 c0 eb 7f 
+62 c8 fe 37 
+
+add roundkey 2
+new state matrix
+15 c9 7f 9d 
+ce 4d 4b c2 
+89 71 be 88 
+65 47 97 cd 
+
+inverse mix columns
+new state matrix
+6a 59 cb bd 
+4e 48 12 a0 
+98 9e 30 9c 
+8b 3d f4 9b 
+
+inverse shift rows
+new state matrix
+6a 59 cb bd 
+a0 4e 48 12 
+30 9c 98 9e 
+3d f4 9b 8b 
+
+inverse sub bytes
+new state matrix
+58 15 59 cd 
+47 b6 d4 39 
+8 1c e2 df 
+8b ba e8 ce 
+
+add roundkey 1
+new state matrix
+ba 84 e8 1b 
+75 a4 8d 40 
+f4 8d 6 7d 
+7a 32 e 5d 
+
+inverse mix columns
+new state matrix
+63 eb 9f a0 
+2f 93 92 c0 
+af c7 ab 30 
+a2 20 cb 2b 
+
+inverse shift rows
+new state matrix
+63 eb 9f a0 
+c0 2f 93 92 
+ab 30 af c7 
+20 cb 2b a2 
+
+inverse sub bytes
+new state matrix
+0 3c 6e 47 
+1f 4e 22 74 
+e 8 1b 31 
+54 59 b 1a 
+
+add roundkey 0
+new state matrix
+54 4f 4e 20 
+77 6e 69 54 
+6f 65 6e 77 
+20 20 65 6f 
+
+final plaintext:
+Two One Nine Two

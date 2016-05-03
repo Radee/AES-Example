@@ -1,0 +1,703 @@
+input 16 character key
+16 characters is this many:
+________________
+1aior%**bcaf&6ac
+input 16 character message
+16 characters is this many:
+________________
+attack at dawn!!
+
+input key
+31 61 69 6f 72 25 2a 2a 62 63 61 66 26 36 61 63 
+output keys
+31 61 69 6f 72 25 2a 2a 62 63 61 66 26 36 61 63 
+35 8e 92 98 47 ab b8 b2 25 c8 d9 d4 3 fe b8 b7 
+8c e2 3b e3 cb 49 83 51 ee 81 5a 85 ed 7f e2 32 
+5a 7a 18 b6 91 33 9b e7 7f b2 c1 62 92 cd 23 50 
+ef 5c 4b f9 7e 6f d0 1e 1 dd 11 7c 93 10 32 2c 
+35 7f 3a 25 4b 10 ea 3b 4a cd fb 47 d9 dd c9 6b 
+d4 a2 45 10 9f b2 af 2b d5 7f 54 6c c a2 9d 7 
+ae fc 80 ee 31 4e 2f c5 e4 31 7b a9 e8 93 e6 ae 
+f2 72 64 75 c3 3c 4b b0 27 d 30 19 cf 9e d6 b7 
+e2 84 cd ff 21 b8 86 4f 6 b5 b6 56 c9 2b 60 e1 
+25 54 35 22 4 ec b3 6d 2 59 5 3b cb 72 65 da 
+
+original message:
+61 74 74 61 63 6b 20 61 74 20 64 61 77 6e 21 21 
+
+add round 0 key
+50 11 16 51 
+15 4e 43 58 
+1d a 5 40 
+e 4b 7 42 
+
+
+byte substitution
+new state matrix
+53 82 47 d1 
+59 2f 1a 6a 
+a4 67 6b 9 
+ab b3 c5 2c 
+
+
+shift rows
+new state matrix
+53 82 47 d1 
+2f 1a 6a 59 
+6b 9 a4 67 
+2c ab b3 c5 
+
+
+mix columns
+new state matrix
+90 93 27 f0 
+9c 6 d7 f 
+de 6c b0 12 
+e9 c3 7a c7 
+
+
+xor with roundKey 1
+new state matrix
+a5 d4 2 f3 
+12 ad 1f f1 
+4c d4 69 aa 
+71 71 ae 70 
+
+
+output from round 1
+a5 d4 2 f3 
+12 ad 1f f1 
+4c d4 69 aa 
+71 71 ae 70 
+
+
+byte substitution
+new state matrix
+6 48 77 d 
+c9 95 c0 a1 
+29 48 f9 ac 
+a3 a3 e4 51 
+
+
+shift rows
+new state matrix
+6 48 77 d 
+95 c0 a1 c9 
+f9 ac 29 48 
+51 a3 a3 e4 
+
+
+mix columns
+new state matrix
+0 c4 9c f6 
+76 9f f6 b8 
+89 35 7a 63 
+c4 e9 4c 45 
+
+
+xor with roundKey 2
+new state matrix
+8c f 72 1b 
+94 d6 77 c7 
+b2 b6 20 81 
+27 b8 c9 77 
+
+
+output from round 2
+8c f 72 1b 
+94 d6 77 c7 
+b2 b6 20 81 
+27 b8 c9 77 
+
+
+byte substitution
+new state matrix
+64 76 40 af 
+22 f6 f5 c6 
+37 4e b7 c 
+cc 6c dd f5 
+
+
+shift rows
+new state matrix
+64 76 40 af 
+f6 f5 c6 22 
+b7 c 37 4e 
+f5 cc 6c dd 
+
+
+mix columns
+new state matrix
+8b 28 8a b0 
+a4 5f e2 e4 
+e3 d4 5c 6d 
+1c e0 e9 27 
+
+
+xor with roundKey 3
+new state matrix
+d1 b9 f5 22 
+de 6c 50 29 
+fb 4f 9d 4e 
+aa 7 8b 77 
+
+
+output from round 3
+d1 b9 f5 22 
+de 6c 50 29 
+fb 4f 9d 4e 
+aa 7 8b 77 
+
+
+byte substitution
+new state matrix
+3e 56 e6 93 
+1d 50 53 a5 
+f 84 5e 2f 
+ac c5 3d f5 
+
+
+shift rows
+new state matrix
+3e 56 e6 93 
+50 53 a5 1d 
+5e 2f f 84 
+f5 ac c5 3d 
+
+
+mix columns
+new state matrix
+27 da e9 a3 
+89 2d 63 3 
+d6 b4 9 da 
+bd c5 a 4d 
+
+
+xor with roundKey 4
+new state matrix
+c8 a4 e8 30 
+d5 42 be 13 
+9d 64 18 e8 
+44 db 76 61 
+
+
+output from round 4
+c8 a4 e8 30 
+d5 42 be 13 
+9d 64 18 e8 
+44 db 76 61 
+
+
+byte substitution
+new state matrix
+e8 49 9b 4 
+3 2c ae 7d 
+5e 43 ad 9b 
+1b b9 38 ef 
+
+
+shift rows
+new state matrix
+e8 49 9b 4 
+2c ae 7d 3 
+ad 9b 5e 43 
+ef 1b b9 38 
+
+
+mix columns
+new state matrix
+fd fb 4d 76 
+b3 a3 3a ff 
+af e7 8a c9 
+67 d8 fc 3c 
+
+
+xor with roundKey 5
+new state matrix
+c8 b0 7 af 
+cc b3 f7 22 
+95 d 71 0 
+42 e3 bb 57 
+
+
+output from round 5
+c8 b0 7 af 
+cc b3 f7 22 
+95 d 71 0 
+42 e3 bb 57 
+
+
+byte substitution
+new state matrix
+e8 e7 c5 79 
+4b 6d 68 93 
+2a d7 a3 63 
+2c 11 ea 5b 
+
+
+shift rows
+new state matrix
+e8 e7 c5 79 
+6d 68 93 4b 
+a3 63 2a d7 
+5b 2c 11 ea 
+
+
+mix columns
+new state matrix
+84 22 4 12 
+97 be 97 67 
+35 3d 31 a2 
+5b 61 cf d8 
+
+
+xor with roundKey 6
+new state matrix
+50 bd d1 1e 
+35 c e8 c5 
+70 92 65 3f 
+4b 4a a3 df 
+
+
+output from round 6
+50 bd d1 1e 
+35 c e8 c5 
+70 92 65 3f 
+4b 4a a3 df 
+
+
+byte substitution
+new state matrix
+53 7a 3e 72 
+96 fe 9b a6 
+51 4f 4d 75 
+b3 d6 a 9e 
+
+
+shift rows
+new state matrix
+53 7a 3e 72 
+fe 9b a6 96 
+4d 75 51 4f 
+9e b3 d6 a 
+
+
+mix columns
+new state matrix
+6c 84 a 0 
+fd 7b 4c 9e 
+8e c5 5b 64 
+61 1d 2 5b 
+
+
+xor with roundKey 7
+new state matrix
+c2 b5 ee e8 
+1 35 7d d 
+e ea 20 82 
+8f d8 ab f5 
+
+
+output from round 7
+c2 b5 ee e8 
+1 35 7d d 
+e ea 20 82 
+8f d8 ab f5 
+
+
+byte substitution
+new state matrix
+25 d5 28 9b 
+7c 96 ff d7 
+ab 87 b7 13 
+73 61 62 e6 
+
+
+shift rows
+new state matrix
+25 d5 28 9b 
+96 ff d7 7c 
+b7 13 ab 87 
+e6 73 61 62 
+
+
+mix columns
+new state matrix
+ba cb f8 4c 
+36 76 1a 93 
+f7 99 11 54 
+99 6e c6 89 
+
+
+xor with roundKey 8
+new state matrix
+48 8 df 83 
+44 4a 17 d 
+93 d2 21 82 
+ec de df 3e 
+
+
+output from round 8
+48 8 df 83 
+44 4a 17 d 
+93 d2 21 82 
+ec de df 3e 
+
+
+byte substitution
+new state matrix
+52 30 9e ec 
+1b d6 f0 d7 
+dc b5 fd 13 
+ce 1d 9e b2 
+
+
+shift rows
+new state matrix
+52 30 9e ec 
+d6 f0 d7 1b 
+fd 13 dc b5 
+b2 ce 1d 9e 
+
+
+mix columns
+new state matrix
+8a b6 84 c5 
+4b 30 49 80 
+a8 af cd 3f 
+a2 34 88 a6 
+
+
+xor with roundKey 9
+new state matrix
+68 97 82 c 
+cf 88 fc ab 
+65 29 7b 5f 
+5d 7b de 47 
+
+
+output from round 9
+68 97 82 c 
+cf 88 fc ab 
+65 29 7b 5f 
+5d 7b de 47 
+
+
+byte substitution
+new state matrix
+45 88 13 fe 
+8a c4 b0 62 
+4d a5 21 cf 
+4c 21 1d a0 
+
+
+shift rows
+new state matrix
+45 88 13 fe 
+c4 b0 62 8a 
+21 cf 4d a5 
+a0 4c 21 1d 
+
+
+xor with roundKey a
+new state matrix
+60 8c 11 35 
+90 5c 3b f8 
+14 7c 48 c0 
+82 21 1a c7 
+
+
+final state matrix:
+60 8c 11 35 
+90 5c 3b f8 
+14 7c 48 c0 
+82 21 1a c7 
+
+final ciphertext:
+60 90 14 82 8c 5c 7c 21 11 3b 48 1a 35 f8 c0 c7 
+
+Do you want to decrypt the ciphertext? (y/n)
+
+y
+add roundkey a
+new state matrix
+45 88 13 fe 
+c4 b0 62 8a 
+21 cf 4d a5 
+a0 4c 21 1d 
+
+inverse shift rows
+new state matrix
+45 88 13 fe 
+8a c4 b0 62 
+4d a5 21 cf 
+4c 21 1d a0 
+
+inverse sub bytes
+new state matrix
+68 97 82 c 
+cf 88 fc ab 
+65 29 7b 5f 
+5d 7b de 47 
+
+add roundkey 9
+new state matrix
+8a b6 84 c5 
+4b 30 49 80 
+a8 af cd 3f 
+a2 34 88 a6 
+
+inverse mix columns
+new state matrix
+52 30 9e ec 
+d6 f0 d7 1b 
+fd 13 dc b5 
+b2 ce 1d 9e 
+
+inverse shift rows
+new state matrix
+52 30 9e ec 
+1b d6 f0 d7 
+dc b5 fd 13 
+ce 1d 9e b2 
+
+inverse sub bytes
+new state matrix
+48 8 df 83 
+44 4a 17 d 
+93 d2 21 82 
+ec de df 3e 
+
+add roundkey 8
+new state matrix
+ba cb f8 4c 
+36 76 1a 93 
+f7 99 11 54 
+99 6e c6 89 
+
+inverse mix columns
+new state matrix
+25 d5 28 9b 
+96 ff d7 7c 
+b7 13 ab 87 
+e6 73 61 62 
+
+inverse shift rows
+new state matrix
+25 d5 28 9b 
+7c 96 ff d7 
+ab 87 b7 13 
+73 61 62 e6 
+
+inverse sub bytes
+new state matrix
+c2 b5 ee e8 
+1 35 7d d 
+e ea 20 82 
+8f d8 ab f5 
+
+add roundkey 7
+new state matrix
+6c 84 a 0 
+fd 7b 4c 9e 
+8e c5 5b 64 
+61 1d 2 5b 
+
+inverse mix columns
+new state matrix
+53 7a 3e 72 
+fe 9b a6 96 
+4d 75 51 4f 
+9e b3 d6 a 
+
+inverse shift rows
+new state matrix
+53 7a 3e 72 
+96 fe 9b a6 
+51 4f 4d 75 
+b3 d6 a 9e 
+
+inverse sub bytes
+new state matrix
+50 bd d1 1e 
+35 c e8 c5 
+70 92 65 3f 
+4b 4a a3 df 
+
+add roundkey 6
+new state matrix
+84 22 4 12 
+97 be 97 67 
+35 3d 31 a2 
+5b 61 cf d8 
+
+inverse mix columns
+new state matrix
+e8 e7 c5 79 
+6d 68 93 4b 
+a3 63 2a d7 
+5b 2c 11 ea 
+
+inverse shift rows
+new state matrix
+e8 e7 c5 79 
+4b 6d 68 93 
+2a d7 a3 63 
+2c 11 ea 5b 
+
+inverse sub bytes
+new state matrix
+c8 b0 7 af 
+cc b3 f7 22 
+95 d 71 0 
+42 e3 bb 57 
+
+add roundkey 5
+new state matrix
+fd fb 4d 76 
+b3 a3 3a ff 
+af e7 8a c9 
+67 d8 fc 3c 
+
+inverse mix columns
+new state matrix
+e8 49 9b 4 
+2c ae 7d 3 
+ad 9b 5e 43 
+ef 1b b9 38 
+
+inverse shift rows
+new state matrix
+e8 49 9b 4 
+3 2c ae 7d 
+5e 43 ad 9b 
+1b b9 38 ef 
+
+inverse sub bytes
+new state matrix
+c8 a4 e8 30 
+d5 42 be 13 
+9d 64 18 e8 
+44 db 76 61 
+
+add roundkey 4
+new state matrix
+27 da e9 a3 
+89 2d 63 3 
+d6 b4 9 da 
+bd c5 a 4d 
+
+inverse mix columns
+new state matrix
+3e 56 e6 93 
+50 53 a5 1d 
+5e 2f f 84 
+f5 ac c5 3d 
+
+inverse shift rows
+new state matrix
+3e 56 e6 93 
+1d 50 53 a5 
+f 84 5e 2f 
+ac c5 3d f5 
+
+inverse sub bytes
+new state matrix
+d1 b9 f5 22 
+de 6c 50 29 
+fb 4f 9d 4e 
+aa 7 8b 77 
+
+add roundkey 3
+new state matrix
+8b 28 8a b0 
+a4 5f e2 e4 
+e3 d4 5c 6d 
+1c e0 e9 27 
+
+inverse mix columns
+new state matrix
+64 76 40 af 
+f6 f5 c6 22 
+b7 c 37 4e 
+f5 cc 6c dd 
+
+inverse shift rows
+new state matrix
+64 76 40 af 
+22 f6 f5 c6 
+37 4e b7 c 
+cc 6c dd f5 
+
+inverse sub bytes
+new state matrix
+8c f 72 1b 
+94 d6 77 c7 
+b2 b6 20 81 
+27 b8 c9 77 
+
+add roundkey 2
+new state matrix
+0 c4 9c f6 
+76 9f f6 b8 
+89 35 7a 63 
+c4 e9 4c 45 
+
+inverse mix columns
+new state matrix
+6 48 77 d 
+95 c0 a1 c9 
+f9 ac 29 48 
+51 a3 a3 e4 
+
+inverse shift rows
+new state matrix
+6 48 77 d 
+c9 95 c0 a1 
+29 48 f9 ac 
+a3 a3 e4 51 
+
+inverse sub bytes
+new state matrix
+a5 d4 2 f3 
+12 ad 1f f1 
+4c d4 69 aa 
+71 71 ae 70 
+
+add roundkey 1
+new state matrix
+90 93 27 f0 
+9c 6 d7 f 
+de 6c b0 12 
+e9 c3 7a c7 
+
+inverse mix columns
+new state matrix
+53 82 47 d1 
+2f 1a 6a 59 
+6b 9 a4 67 
+2c ab b3 c5 
+
+inverse shift rows
+new state matrix
+53 82 47 d1 
+59 2f 1a 6a 
+a4 67 6b 9 
+ab b3 c5 2c 
+
+inverse sub bytes
+new state matrix
+50 11 16 51 
+15 4e 43 58 
+1d a 5 40 
+e 4b 7 42 
+
+add roundkey 0
+new state matrix
+61 63 74 77 
+74 6b 20 6e 
+74 20 64 21 
+61 61 61 21 
+
+final plaintext:
+attack at dawn!!
