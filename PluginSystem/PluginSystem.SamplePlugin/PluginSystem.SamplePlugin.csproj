@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluginSystem.Interfaces\PluginSystem.Interfaces.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <MakeDir Directories="$(SolutionDir)PluginSystem.MainApp\$(OutputPath)Plugins" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)PluginSystem.MainApp\$(OutputPath)Plugins" />
+    <!-- Also copy the interface DLL if needed, but MainApp already has it.
+         Usually we don't want to copy the interface DLL to the plugins folder to avoid versioning issues,
+         MEF will find it in the main app directory. -->
+  </Target>
+
+</Project>
