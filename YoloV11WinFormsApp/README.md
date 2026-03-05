@@ -29,7 +29,14 @@ This is a C# WinForms application targeting .NET Framework 4.8.1 that uses YOLOv
 
 4. **Build and Run**:
    - Set the configuration to `Debug` or `Release`.
+   - **IMPORTANT**: Ensure the Solution Platform is set to **x64**. The ONNX Runtime and OpenCV native libraries require the application to run in 64-bit mode.
    - Press **F5** to run the application.
 
+## Troubleshooting
+If you encounter a `TypeInitializationException` or `EntryPointNotFoundException (OrtGetApiBase)`:
+- This usually means there is an architecture mismatch (e.g., trying to run as x86 or AnyCPU).
+- Go to **Project Properties -> Build** and ensure **Platform Target** is set to **x64**.
+- Clean and Rebuild the solution.
+
 ## Note on Architecture
-The app is designed to work on Windows (due to `OpenCvSharp4.runtime.win` and WinForms). Ensure your build target is set to `x64` for better performance with ONNX Runtime.
+The app is designed to work on Windows (due to `OpenCvSharp4.runtime.win` and WinForms). The project is explicitly configured for `win-x64`.
