@@ -29,14 +29,27 @@ namespace YoloV11WinFormsApp
 
         private void LoadModels()
         {
-            string detectionModel = "yolo11n.onnx";
-            string classificationModel = "yolo11n-cls.onnx";
+            string detectionModel = "Models/yolo11n.onnx";
+            string classificationModel = "Models/yolo11n-cls.onnx";
+
+            // Check if models exist in the Models subfolder
+            if (!File.Exists(detectionModel))
+            {
+                // Fallback to current directory for convenience during development
+                detectionModel = "yolo11n.onnx";
+                classificationModel = "yolo11n-cls.onnx";
+            }
 
             if (File.Exists(detectionModel))
                 _detector = new YoloPredictor(detectionModel, _cocoLabels, false);
 
             if (File.Exists(classificationModel))
-                _classifier = new YoloPredictor(classificationModel, new string[0], true); // Labels could be loaded from a file
+                _classifier = new YoloPredictor(classificationModel, new string[0], true);
+
+            if (_detector == null && _classifier == null)
+            {
+                lblStatus.Text = "Models not found! Please check the Models folder.";
+            }
         }
 
         private async void btnLoadImage_Click(object sender, EventArgs e)
@@ -102,10 +115,14 @@ namespace YoloV11WinFormsApp
 
         private void ProcessAndDisplay(Mat mat)
         {
-            var predictor = rbDetection.Checked ? _detector : _classifier;
+            // Fetch UI state safely
+            bool isDetectionMode = true;
+            this.Invoke(new Action(() => isDetectionMode = rbDetection.Checked));
+
+            var predictor = isDetectionMode ? _detector : _classifier;
             if (predictor == null)
             {
-                this.Invoke(new Action(() => lblStatus.Text = "Model not loaded. Please run the download script."));
+                this.Invoke(new Action(() => lblStatus.Text = "Model not loaded. Please ensure models are in the 'Models' folder."));
                 DisplayImage(mat);
                 return;
             }
@@ -115,7 +132,7 @@ namespace YoloV11WinFormsApp
             using Mat resultMat = mat.Clone();
             foreach (var res in results)
             {
-                if (rbDetection.Checked)
+                if (isDetectionMode)
                 {
                     Cv2.Rectangle(resultMat, new OpenCvSharp.Rect((int)res.Rect.X, (int)res.Rect.Y, (int)res.Rect.Width, (int)res.Rect.Height), Scalar.Red, 2);
                     Cv2.PutText(resultMat, $"{res.Label} {res.Confidence:P0}", new OpenCvSharp.Point(res.Rect.X, res.Rect.Y - 5), HersheyFonts.HersheySimplex, 0.5, Scalar.Red, 1);

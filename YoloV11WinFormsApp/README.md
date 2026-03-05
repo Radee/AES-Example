@@ -14,11 +14,9 @@ This is a C# WinForms application targeting .NET Framework 4.8.1 that uses YOLOv
 
 ## Setup Instructions
 
-1. **Download the Models**:
-   - Open PowerShell.
-   - Navigate to the project directory.
-   - Run: `./DownloadModels.ps1`
-   - Alternatively, manually download `yolo11n.onnx` and `yolo11n-cls.onnx` from [Ultralytics Assets](https://github.com/ultralytics/assets/releases) and place them in the project root or the `bin\Debug` folder.
+1. **Models Included**:
+   - This project includes pre-exported YOLOv11 models in the `Models/` folder.
+   - They have been exported with **Opset 17** for maximum compatibility.
 
 2. **Open the Project**:
    - Open `YoloV11WinFormsApp.csproj` in Visual Studio 2022.
