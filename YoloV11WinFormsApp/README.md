@@ -33,10 +33,19 @@ This is a C# WinForms application targeting .NET Framework 4.8.1 that uses YOLOv
    - Press **F5** to run the application.
 
 ## Troubleshooting
-If you encounter a `TypeInitializationException` or `EntryPointNotFoundException (OrtGetApiBase)`:
+
+### Architecture Error (`EntryPointNotFoundException: OrtGetApiBase`)
 - This usually means there is an architecture mismatch (e.g., trying to run as x86 or AnyCPU).
 - Go to **Project Properties -> Build** and ensure **Platform Target** is set to **x64**.
 - Clean and Rebuild the solution.
+
+### Opset Error (`ONNX Runtime only guarantees support for models stamped with official released onnx opset versions`)
+If you see an error about **Opset 22**, it means the pre-trained models you downloaded are too new for the current ONNX Runtime.
+To fix this, you should export the models manually using a compatible Opset (like 17):
+1. Install Ultralytics: `pip install ultralytics`
+2. Export Detection: `yolo export model=yolo11n.pt format=onnx opset=17`
+3. Export Classification: `yolo export model=yolo11n-cls.pt format=onnx opset=17`
+4. Replace the `.onnx` files in your project with these new ones.
 
 ## Note on Architecture
 The app is designed to work on Windows (due to `OpenCvSharp4.runtime.win` and WinForms). The project is explicitly configured for `win-x64`.
