@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.companyname.mauiappwidgetdemo">
+
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
+
+    <application android:allowBackup="true"
+                 android:icon="@mipmap/appicon"
+                 android:roundIcon="@mipmap/appicon_round"
+                 android:supportsRtl="true"
+                 android:label="MauiAppWidgetDemo">
+
+        <!-- Rejestracja AppWidgetProvider dla Android Widget -->
+        <receiver android:name="com.companyname.mauiappwidgetdemo.SampleWidgetProvider"
+                  android:exported="true"
+                  android:label="MAUI Demo Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.companyname.mauiappwidgetdemo.ACTION_WIDGET_BUTTON" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                       android:resource="@xml/sample_widget_info" />
+        </receiver>
+
+    </application>
+
+</manifest>

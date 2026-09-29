@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppWidgetDemo.MainPage"
+             BackgroundColor="#F3F4F6">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30,40" VerticalOptions="Center">
+
+            <Image Source="dotnet_bot.png"
+                   HeightRequest="120"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit" />
+
+            <Label Text=".NET MAUI Android Widget Demo"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#1F2937"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Aplikacja demonstracyjna pokazująca integrację z widgetami ekranu głównego (Home Screen Widget) w systemie Android."
+                   FontSize="15"
+                   TextColor="#4B5563"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <Frame CornerRadius="12"
+                   BorderColor="#E5E7EB"
+                   BackgroundColor="White"
+                   Padding="20"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Status Widgetu"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#111827" />
+
+                    <Label x:Name="StatusLabel"
+                           Text="Gotowy do przypięcia widgetu"
+                           FontSize="14"
+                           TextColor="#6B7280" />
+
+                    <Button x:Name="PinWidgetBtn"
+                            Text="📌 Przypnij Widget do Ekranu Głównego"
+                            BackgroundColor="#512BD4"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="48"
+                            Clicked="OnPinWidgetClicked" />
+
+                    <Button x:Name="UpdateWidgetBtn"
+                            Text="🔄 Zaktualizuj Dane Widgetu"
+                            BackgroundColor="#10B981"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="48"
+                            Clicked="OnUpdateWidgetClicked" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame CornerRadius="12"
+                   BorderColor="#E5E7EB"
+                   BackgroundColor="#F9FAFB"
+                   Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="💡 Jak ręcznie dodać widget:"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="#374151" />
+                    <Label Text="1. Przytrzymaj puste miejsce na ekranie głównym Androida.&#10;2. Wybierz 'Widgety'.&#10;3. Znajdź 'MauiAppWidgetDemo' i przeciągnij widget na ekran."
+                           FontSize="13"
+                           TextColor="#6B7280" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
